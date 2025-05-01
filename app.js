@@ -145,7 +145,7 @@ color:#ffffff!important;
       <td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:560px">
        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
          <tr>
-          <td align="center" style="padding:0;Margin:0;padding-top:30px;padding-bottom:20px;font-size:0px"><img src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2FFFA462A4-A3B2-4640-9BDF-8FC2239C1AE4.PNG?alt=media&token=3d86df14-a55b-442c-9318-3d5075c6b784" alt="Logo" style="display:block;font-size:12px;border:0;outline:none;text-decoration:none" title="Logo" class="img-4871" height="51" width="200"></td>
+          <td align="center" style="padding:0;Margin:0;padding-top:30px;padding-bottom:20px;font-size:0px"><img src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2F6B7EB8FA-D7FC-4080-8057-DEEE4686E288.PNG?alt=media&token=d206fdfc-9314-4ec3-bf31-da612772331e" alt="Logo" style="display:block;font-size:12px;border:0;outline:none;text-decoration:none" title="Logo" class="img-4871" height="51" width="200"></td>
          </tr>
        </table></td>
      </tr>
@@ -371,7 +371,7 @@ color:#ffffff!important;
           <td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:560px">
            <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
              <tr>
-              <td style="padding:0;Margin:0;padding-bottom:20px;font-size:0px" align="center"><img src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2FFFA462A4-A3B2-4640-9BDF-8FC2239C1AE4.PNG?alt=media&token=3d86df14-a55b-442c-9318-3d5075c6b784" alt="Logo" style="display:block;font-size:12px;border:0;outline:none;text-decoration:none" title="Logo" class="img-7614 img-7614" height="44" width="178"></td>
+              <td style="padding:0;Margin:0;padding-bottom:20px;font-size:0px" align="center"><img src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2F6B7EB8FA-D7FC-4080-8057-DEEE4686E288.PNG?alt=media&token=d206fdfc-9314-4ec3-bf31-da612772331e" alt="Logo" style="display:block;font-size:12px;border:0;outline:none;text-decoration:none" title="Logo" class="img-7614 img-7614" height="44" width="178"></td>
              </tr>
            </table></td>
          </tr>
@@ -652,7 +652,7 @@ color:#ffffff!important;
           <td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:560px">
            <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
              <tr>
-              <td style="padding:0;Margin:0;padding-bottom:20px;font-size:0px" align="center"><img src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2FFFA462A4-A3B2-4640-9BDF-8FC2239C1AE4.PNG?alt=media&token=3d86df14-a55b-442c-9318-3d5075c6b784" alt="Logo" style="display:block;font-size:12px;border:0;outline:none;text-decoration:none" title="Logo" class="img-7614 img-7614" height="44" width="178"></td>
+              <td style="padding:0;Margin:0;padding-bottom:20px;font-size:0px" align="center"><img src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2F6B7EB8FA-D7FC-4080-8057-DEEE4686E288.PNG?alt=media&token=d206fdfc-9314-4ec3-bf31-da612772331e" alt="Logo" style="display:block;font-size:12px;border:0;outline:none;text-decoration:none" title="Logo" class="img-7614 img-7614" height="44" width="178"></td>
              </tr>
            </table></td>
          </tr>
@@ -902,7 +902,7 @@ color:#ffffff!important;
                   <td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:560px">
                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr>
-                      <td style="padding:0;Margin:0;padding-bottom:20px;font-size:0px" align="center"><img src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2FFFA462A4-A3B2-4640-9BDF-8FC2239C1AE4.PNG?alt=media&token=3d86df14-a55b-442c-9318-3d5075c6b784" alt="Logo" style="display:block;font-size:12px;border:0;outline:none;text-decoration:none" title="Logo" class="img-7614 img-7614" height="44" width="178"></td>
+                      <td style="padding:0;Margin:0;padding-bottom:20px;font-size:0px" align="center"><img src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2F6B7EB8FA-D7FC-4080-8057-DEEE4686E288.PNG?alt=media&token=d206fdfc-9314-4ec3-bf31-da612772331e" alt="Logo" style="display:block;font-size:12px;border:0;outline:none;text-decoration:none" title="Logo" class="img-7614 img-7614" height="44" width="178"></td>
                      </tr>
                    </table></td>
                  </tr>
@@ -1492,7 +1492,7 @@ app.post('/admin/maileredit.html', (request, response) => {
                                     style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                     <tr>
                                       <td style="padding:0;Margin:0;padding-bottom:20px;font-size:0px" align="center"><img
-                                          src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2FFFA462A4-A3B2-4640-9BDF-8FC2239C1AE4.PNG?alt=media&token=3d86df14-a55b-442c-9318-3d5075c6b784"
+                                          src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2F6B7EB8FA-D7FC-4080-8057-DEEE4686E288.PNG?alt=media&token=d206fdfc-9314-4ec3-bf31-da612772331e"
                                           alt="Logo"
                                           style="display:block;font-size:12px;border:0;outline:none;text-decoration:none"
                                           title="Logo" class="img-7614 img-7614" height="44" width="178"></td>
@@ -2134,7 +2134,7 @@ app.post('/admin/maileredit.html', (request, response) => {
                               style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                               <tr>
                                 <td style="padding:0;Margin:0;padding-bottom:20px;font-size:0px" align="center"><img
-                                    src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2FFFA462A4-A3B2-4640-9BDF-8FC2239C1AE4.PNG?alt=media&token=3d86df14-a55b-442c-9318-3d5075c6b784"
+                                    src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2F6B7EB8FA-D7FC-4080-8057-DEEE4686E288.PNG?alt=media&token=d206fdfc-9314-4ec3-bf31-da612772331e"
                                     alt="Logo"
                                     style="display:block;font-size:12px;border:0;outline:none;text-decoration:none"
                                     title="Logo" class="img-7614 img-7614" height="44" width="178"></td>
@@ -2399,7 +2399,7 @@ app.post('/register/index.html', (request, response)=>{
                                                                 <table cellpadding="0" cellspacing="0" width="100%">
                                                                     <tbody>
                                                                         <tr>
-                                                                            <td  align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href=""><img src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2FFFA462A4-A3B2-4640-9BDF-8FC2239C1AE4.PNG?alt=media&token=3d86df14-a55b-442c-9318-3d5075c6b784" style="display: block;" height="50" ></a></td>
+                                                                            <td  align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href=""><img src="https://firebasestorage.googleapis.com/v0/b/mailing-content.appspot.com/o/adding%20new%20bank%20logo%2F6B7EB8FA-D7FC-4080-8057-DEEE4686E288.PNG?alt=media&token=d206fdfc-9314-4ec3-bf31-da612772331e" style="display: block;" height="50" ></a></td>
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>
