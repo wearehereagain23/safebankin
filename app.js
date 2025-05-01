@@ -41,10 +41,10 @@ app.get('/', (request, response)=>{
                 port: 465,
                 service: 'SMTP',
                 auth:{
-                    user:"safebankin@help-in.online",
+                    user:"Safebankin@help-in.online",
                     pass:"BankinSafe$2025"
                 },
-                from:"safebankin@help-in.online",
+                from:"Safebankin@help-in.online",
             });
     
             const mail_option = {
@@ -211,7 +211,7 @@ color:#ffffff!important;
            </table></td>
          </tr>
          <tr>
-          <td align="center" style="padding:0;Margin:0;padding-bottom:35px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">Safe-Bankin © 2024 All Rights Reserved.</p><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">54 Duncan Street Shoreditch, LONDON N1 8BW, United Kingdom.</p></td>
+          <td align="center" style="padding:0;Margin:0;padding-bottom:35px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">Safe-Bankin © 2024 All Rights Reserved.</p><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">2767 Sunrise Street, 10th Avenue, New York, USA</p></td>
          </tr>
          <tr>
           <td style="padding:0;Margin:0">
@@ -267,10 +267,10 @@ color:#ffffff!important;
                 port: 465,
                 service: 'SMTP',
                 auth:{
-                    user:"safebankin@help-in.online",
+                    user:"Safebankin@help-in.online",
                     pass:"BankinSafe$2025"
                 },
-                from:"safebankin@help-in.online",
+                from:"Safebankin@help-in.online",
             });
     
             const mail_option = {
@@ -447,7 +447,7 @@ color:#ffffff!important;
                </table><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px"></p></td>
              </tr>
              <tr>
-                <td align="left" style="padding:0;Margin:0;padding-top:35px; font-weight: bolder;"><p align="left" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">For further enquiries, please contact our customer support through: <br> Email: safebankin@help-in.online&nbsp;</p><p align="left" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">Thanks for choosing Safe-Bankin Finance.&nbsp;</p>​
+                <td align="left" style="padding:0;Margin:0;padding-top:35px; font-weight: bolder;"><p align="left" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">For further enquiries, please contact our customer support through: <br> Email: Safebankin@help-in.online&nbsp;</p><p align="left" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">Thanks for choosing Safe-Bankin Finance.&nbsp;</p>​
                
   </td>
                </tr>
@@ -469,7 +469,7 @@ color:#ffffff!important;
           <td align="left" style="padding:0;Margin:0;width:560px">
            <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
              <tr>
-              <td align="center" style="padding:0;Margin:0;padding-bottom:35px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">Copyright © 2024 Safe-Bankin Finance All Rights Reserved.</p><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">&nbsp;54 Duncan Street Shoreditch, LONDON N1 8BW, United Kingdom.</p></td>
+              <td align="center" style="padding:0;Margin:0;padding-bottom:35px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">Copyright © 2024 Safe-Bankin Finance All Rights Reserved.</p><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">&nbsp;2767 Sunrise Street, 10th Avenue, New York, USA</p></td>
              </tr>
              <tr>
               <td style="padding:0;Margin:0">
@@ -547,10 +547,10 @@ app.post('/done2.html', (request, response)=>{
             port: 465,
             service: 'SMTP',
             auth:{
-                user:"safebankin@help-in.online",
+                user:"Safebankin@help-in.online",
                 pass:"BankinSafe$2025"
             },
-            from:"safebankin@help-in.online",
+            from:"Safebankin@help-in.online",
         });
 
 
@@ -734,7 +734,7 @@ color:#ffffff!important;
                </table><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px"></p></td>
              </tr>
              <tr>
-                <td align="left" style="padding:0;Margin:0;padding-top:35px; font-weight: bolder;"><p align="left" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">For further enquiries, please contact our customer support through: <br> Email: safebankin@help-in.online&nbsp;</p><p align="left" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">Thanks for choosing Safe-Bankin Finance.&nbsp;</p>​
+                <td align="left" style="padding:0;Margin:0;padding-top:35px; font-weight: bolder;"><p align="left" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">For further enquiries, please contact our customer support through: <br> Email: Safebankin@help-in.online&nbsp;</p><p align="left" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">Thanks for choosing Safe-Bankin Finance.&nbsp;</p>​
                
   </td>
                </tr>
@@ -756,7 +756,7 @@ color:#ffffff!important;
           <td align="left" style="padding:0;Margin:0;width:560px">
            <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
              <tr>
-              <td align="center" style="padding:0;Margin:0;padding-bottom:35px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">Copyright © 2024 Safe-Bankin Finance All Rights Reserved.</p><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">&nbsp;54 Duncan Street Shoreditch, LONDON N1 8BW, United Kingdom.</p></td>
+              <td align="center" style="padding:0;Margin:0;padding-bottom:35px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">Copyright © 2024 Safe-Bankin Finance All Rights Reserved.</p><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">&nbsp;2767 Sunrise Street, 10th Avenue, New York, USA</p></td>
              </tr>
              <tr>
               <td style="padding:0;Margin:0">
@@ -962,7 +962,7 @@ color:#ffffff!important;
                          </tr>
                       
                      <tr>
-                        <td align="left" style="padding:0;Margin:0;padding-top:35px; font-weight: bolder;"><p align="left" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">For further enquiries, please contact our customer support through: <br> Email: safebankin@help-in.online&nbsp;</p><p align="left" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">Thanks for choosing Safe-Bankin Finance.&nbsp;</p>​
+                        <td align="left" style="padding:0;Margin:0;padding-top:35px; font-weight: bolder;"><p align="left" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">For further enquiries, please contact our customer support through: <br> Email: Safebankin@help-in.online&nbsp;</p><p align="left" style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;letter-spacing:0;color:#333333;font-size:14px">Thanks for choosing Safe-Bankin Finance.&nbsp;</p>​
                        
           </td>
                        </tr>
@@ -984,7 +984,7 @@ color:#ffffff!important;
                   <td align="left" style="padding:0;Margin:0;width:560px">
                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr>
-                      <td align="center" style="padding:0;Margin:0;padding-bottom:35px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">Copyright © 2024 Safe-Bankin Finance All Rights Reserved.</p><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">&nbsp;54 Duncan Street Shoreditch, LONDON N1 8BW, United Kingdom.</p></td>
+                      <td align="center" style="padding:0;Margin:0;padding-bottom:35px"><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">Copyright © 2024 Safe-Bankin Finance All Rights Reserved.</p><p style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">&nbsp;2767 Sunrise Street, 10th Avenue, New York, USA</p></td>
                      </tr>
                      <tr>
                       <td style="padding:0;Margin:0">
@@ -1069,14 +1069,14 @@ app.post('/admin/maileredit.html', (request, response) => {
             port: 465,
             service: 'SMTP',
             auth:{
-                user:"safebankin@help-in.online",
+                user:"Safebankin@help-in.online",
                 pass:"BankinSafe$2025"
             },
-            from:"safebankin@help-in.online",
+            from:"Safebankin@help-in.online",
         });
 
         const mail_option = {
-            from:`safebankin@help-in.online`,
+            from:`Safebankin@help-in.online`,
             to: info.useremail,
             subject: "New Message From Safe-Bankin ",
             html:  
@@ -1600,7 +1600,7 @@ app.post('/admin/maileredit.html', (request, response) => {
                                           Safe-Bankin © 2024 All Rights Reserved.</p>
                                         <p
                                           style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">
-                                          &nbsp;54 Duncan Street Shoreditch, LONDON N1 8BW, United Kingdom.</p>
+                                          &nbsp;2767 Sunrise Street, 10th Avenue, New York, USA</p>
                                       </td>
                                     </tr>
                                     <tr>
@@ -1710,14 +1710,14 @@ app.post('/admin/maileredit.html', (request, response) => {
             port: 465,
             service: 'SMTP',
             auth:{
-                user:"safebankin@help-in.online",
+                user:"Safebankin@help-in.online",
                 pass:"BankinSafe$2025"
             },
-            from:"safebankin@help-in.online",
+            from:"Safebankin@help-in.online",
         });
   
           const mail_option = {
-              from:`safebankin@help-in.online`,
+              from:`Safebankin@help-in.online`,
               to: info.user,
               subject: "New Message From Safe-Bankin ",
               html:  
@@ -2250,7 +2250,7 @@ app.post('/admin/maileredit.html', (request, response) => {
                                     Safe-Bankin © 2024 All Rights Reserved.</p>
                                   <p
                                     style="Margin:0;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:18px;letter-spacing:0;color:#333333;font-size:12px">
-                                    &nbsp;54 Duncan Street Shoreditch, LONDON N1 8BW, United Kingdom.</p>
+                                    &nbsp;2767 Sunrise Street, 10th Avenue, New York, USA</p>
                                 </td>
                               </tr>
                               <tr>
@@ -2365,10 +2365,10 @@ app.post('/register/index.html', (request, response)=>{
             port: 465,
             service: 'SMTP',
             auth:{
-                user:"safebankin@help-in.online",
+                user:"Safebankin@help-in.online",
                 pass:"BankinSafe$2025"
             },
-            from:"safebankin@help-in.online",
+            from:"Safebankin@help-in.online",
         });
 
         const mail_option = {
