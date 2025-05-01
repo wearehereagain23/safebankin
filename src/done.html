@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Done</title>
+
+
+  
+
+</head>
+
+
+<body>
+
+
+    <dialog class="DIG"  id="myDialog">
+        <div id="top" class="top hide">
+            <img class="immg" src="./done.png" alt="">
+            <p>Sent successfully</p>
+            <a href="https://kreditfund.web.app/dashboard/international.html" class="cc" style="border: 0px; border-radius: 10px; color: white;" >Done </a>
+        </div>
+
+        <div id="down" class="">
+            <div id="loader"></div>
+            <div style="height: 5vh;"></div>
+            <p style="text-align: center; padding: 10%;">Sending...</p>
+
+        </div>
+      
+
+
+    
+        <style>
+            .top{
+                width: 100%;
+                height: 50vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .hide{
+                display: none;
+            }
+            .immg{
+                width: 20%;
+                height: 17vh;
+            }
+            @media screen and (max-width:992px) {
+                .immg{
+            width: 40%;
+                height: 17vh;
+            }
+          }
+            .DIG{
+                border: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 50%;
+                height: 90vh;
+            }
+            @media screen and (max-width:992px) {
+                .DIG{
+                    width: 90%;
+                   
+                    }
+                }
+
+            .cc{
+                background-color: rgb(6, 50, 55);
+                padding-left: 8%;
+                padding-right: 8%;
+                padding-top: 3%;
+                padding-bottom: 3%;
+                color: white;
+            }
+            .cc:hover{
+                background-color: rgb(68, 144, 152);
+            }
+
+            /* SPINNER CSS */
+
+            body {
+	background: white;
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	margin: 0;
+}
+
+#loader {
+	width: 8rem;
+	height: 8rem;
+	position: relative;
+	border-radius: 11px;
+	animation: spin 1s ease infinite;
+	&:hover {
+		background: #303030;
+	}
+	&::before, &::after {
+		content: '';
+		width: 40%;
+		height: 40%;
+		display: block;
+		position: absolute;
+		border-radius: 9px;
+	}
+	&::before {
+		top: 3px;
+		left: 3px;
+		background: #2b6620;
+	}
+	&::after {
+		bottom: 3px;
+		right: 3px;
+		background: #204e66;
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(135deg);
+	}
+	to {
+		transform: rotate(495deg);
+	}
+}
+        </style>
+
+        <script>
+
+    
+            </script>
+    </dialog>
+
+    <script>
+        
+   </script>
+
+
+<script type="module">
+
+    const url = window.location.search;
+    const urldata = new URLSearchParams(url);
+    const i = urldata.get("i")
+    const n = urldata.get("n")
+    const rn = urldata.get("rn")
+    const db = urldata.get("db")
+    const ra = urldata.get("ra")
+    const c = urldata.get("c")
+    const re = urldata.get("re")
+    const rb = urldata.get("rb")
+    const rc = urldata.get("rc")
+
+
+    let thedate = new Date().toLocaleString();
+    let formData2 = {
+        senderemail: i,
+        sendername: n,
+        receivername: rn,
+        debit: db,
+        receiveraccountnumber: ra,
+        currency: c,
+        receiveremail: re,
+        receiverbank: rb,
+        receivercountry: rc,
+        date: thedate
+
+    }
+    const options = {
+    method: 'POST',
+
+    headers: {
+    'Content-type': 'application/json'
+    },
+    body: JSON.stringify(formData2),
+    }
+    const respones = await fetch('/done.html', options);
+    respones.json().then(async(dd) => {
+
+           const ch = document.getElementById("top")
+           ch.classList.remove("hide");
+           const ch2 = document.getElementById("down")
+           ch2.classList.add("hide");
+           localStorage.removeItem("username")
+           });
+
+
+    
+
+
+
+</script>
+
+</body>
+</html>

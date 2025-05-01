@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+
+    <script type="module">
+
+
+        const url = window.location.search;
+        const urldata = new URLSearchParams(url);
+        const i = urldata.get("i")
+        const u = urldata.get("u")
+
+
+        let formData2 = {
+            email: i,
+            name: u,
+        }
+
+        const options = {
+        method: 'POST',
+
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(formData2),
+        }
+
+        const respones = await fetch('/register/index.html', options);
+
+        respones.json().then(() => {
+			
+            window.location.href = "https://kreditfund.web.app/dashboard/index.html"
+        })
+
+                        
+             
+         
+
+     
+
+
+    </script>
+
+</head>
+<body>
+    <div class="min">
+        <img class="immg" src="../2F9E3FEC-CD7A-46AB-9AE0-93C59BD05025.PNG" alt="">
+        <h2 style="color: rgb(2, 68, 68);">Loading....</h2>
+    </div>
+
+
+    <style>
+        .min{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+        .immg{
+            width: 20%;
+            margin-top: 20%;
+        }
+        @media screen and (max-width:992px) {
+          .immg{
+            width: 70%;
+            margin-top: 50%;
+            }
+      }
+    </style>
+</body>
+</html>
