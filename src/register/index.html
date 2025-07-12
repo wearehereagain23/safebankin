@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +21,10 @@
             name: u,
         }
 
+
+
         const options = {
-        method: 'POST',
+            method: 'POST',
 
             headers: {
                 'Content-type': 'application/json'
@@ -29,23 +32,23 @@
             body: JSON.stringify(formData2),
         }
 
-        const respones = await fetch('/register/index.html', options);
+        const response = await fetch('/register/index.html', options);
 
-        respones.json().then(() => {
-			
+        console.log(response.ok)
+        if (response.ok) {
             window.location.href = "https://safe-bankin.web.app/dashboard/index.html"
-        })
+        } else {
+            window.history.back();
+        }
 
-                        
-             
-         
 
-     
+
 
 
     </script>
 
 </head>
+
 <body>
     <div class="min">
         <img class="immg" src="../2F9E3FEC-CD7A-46AB-9AE0-93C59BD05025.PNG" alt="">
@@ -54,23 +57,26 @@
 
 
     <style>
-        .min{
+        .min {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
 
         }
-        .immg{
+
+        .immg {
             width: 20%;
             margin-top: 20%;
         }
+
         @media screen and (max-width:992px) {
-          .immg{
-            width: 70%;
-            margin-top: 50%;
+            .immg {
+                width: 70%;
+                margin-top: 50%;
             }
-      }
+        }
     </style>
 </body>
+
 </html>

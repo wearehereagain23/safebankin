@@ -61,48 +61,53 @@
         const urlParams = new URLSearchParams(window.location.search);
         const USERID = urlParams.get('i');
 
-    
 
-                const formDAT = document.getElementById('the_mailer');
 
-                formDAT.addEventListener('submit', async(event) => {
-                    event.preventDefault();
-                    // Receiver infor
-                    const formData = new FormData(formDAT);
-                    let p1 = (formData.get('p1'));
-                    let p2 = (formData.get('p2'));
-                    let p3 = (formData.get('p3'));
-                    let subject = (formData.get('subject'));
-                    
+        const formDAT = document.getElementById('the_mailer');
 
-                        let formData2 = {
-                        useremail: USERID,
-                        p1: p1,
-                        p2: p2,
-                        p3: p3,
-                        subject: subject,
-                                }
+        formDAT.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            // Receiver infor
+            const formData = new FormData(formDAT);
+            let p1 = (formData.get('p1'));
+            let p2 = (formData.get('p2'));
+            let p3 = (formData.get('p3'));
+            let subject = (formData.get('subject'));
 
-                                
-                            const options = {
-                                method: 'POST',
 
-                                headers: {
-                                    'Content-type': 'application/json'
-                                },
-                                body: JSON.stringify(formData2),
-                            }
-                            const respones = await fetch('/admin/maileredit.html', options);
-                            respones.json().then(async (dd) => {
-                                notyf.success('Message sent');
-                                document.getElementById('p1').value = ''
-                                document.getElementById('p2').value = ''
-                                document.getElementById('p3').value = ''
-                                document.getElementById('subject').value = ''
+            let formData2 = {
+                useremail: USERID,
+                p1: p1,
+                p2: p2,
+                p3: p3,
+                subject: subject,
+            }
 
-                            })
-                            })
-                
+
+            const options = {
+                method: 'POST',
+
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(formData2),
+            }
+
+            const response = await fetch('/done.html', options);
+
+            console.log(response.ok)
+            if (response.ok) {
+                notyf.success('Message sent');
+                document.getElementById('p1').value = ''
+                document.getElementById('p2').value = ''
+                document.getElementById('p3').value = ''
+                document.getElementById('subject').value = ''
+            } else {
+                window.history.back();
+            }
+
+        })
+
 
     </script>
 
@@ -123,67 +128,65 @@
 
     </script>
 
-  
+
     <!--Container Main start-->
     <div class="height-100 bg-light">
         <h4 style="font-family: 'Courier New', Courier, monospace ;">Send Email</h4>
 
 
         <div class="container">
-            <form  id="the_mailer">
+            <form id="the_mailer">
 
 
                 <div class="row">
                     <div class="col-25">
-                      <label for="fname">Subject</label>
+                        <label for="fname">Subject</label>
                     </div>
                     <div class="col-75">
-                      <input type="text" id="subject" name="subject" placeholder="Subject...">
-                    </div>
-             
-               
-                <div class="row">
-                  
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="subject">Paragraph </label>
-                        </div>
-                        <div class="col-75">
-                            <textarea id="p1" name="p1" required placeholder="Paragraph 1.."
-                                style="height:150px"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-25">
-                            <label for="subject">Paragraph 2</label>
-                        </div>
-                        <div class="col-75">
-                            <textarea id="p2" name="p2" placeholder="Paragraph 2.."
-                                style="height:150px"></textarea>
-                        </div>
+                        <input type="text" id="subject" name="subject" placeholder="Subject...">
                     </div>
 
 
                     <div class="row">
-                        <div class="col-25">
-                            <label for="subject">Paragraph 3</label>
-                        </div>
-                        <div class="col-75" >
-                            <textarea id="p3" name="p3" placeholder="Paragraph 3.."
-                                style="height:150px"></textarea>
-                        </div>
-                    </div>
 
-                    <div class="row" style="margin-top: 5%;">
-                        <input type="submit" value="Send">
-                    </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="subject">Paragraph </label>
+                            </div>
+                            <div class="col-75">
+                                <textarea id="p1" name="p1" required placeholder="Paragraph 1.."
+                                    style="height:150px"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="subject">Paragraph 2</label>
+                            </div>
+                            <div class="col-75">
+                                <textarea id="p2" name="p2" placeholder="Paragraph 2.." style="height:150px"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="subject">Paragraph 3</label>
+                            </div>
+                            <div class="col-75">
+                                <textarea id="p3" name="p3" placeholder="Paragraph 3.." style="height:150px"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 5%;">
+                            <input type="submit" value="Send">
+                        </div>
             </form>
 
             <a href="https://safe-bankin.web.app/Admin/Mailer.html" class="bto">←Go Back</a>
         </div>
         <style>
-            .bto{
+            .bto {
                 background-color: rgb(17, 114, 141);
                 border: 0px;
                 color: white;
