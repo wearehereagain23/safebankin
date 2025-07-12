@@ -1,5 +1,5 @@
 const express = require('express');
-var bodyParser  = require('body-parser');
+var bodyParser = require('body-parser');
 const app = express();
 const port = 4000
 const nodemailer = require("nodemailer");
@@ -8,51 +8,52 @@ const path = require('path');
 
 
 app.use(
-    express.urlencoded({
-      extended: true,
-    })
-  )
+  express.urlencoded({
+    extended: true,
+  })
+)
 
-  app.use(express.json());
+app.use(express.json());
 
 
 
 const ff = path.join(__dirname, '/src')
-app.use( express.static(ff));
+app.use(express.static(ff));
 
 
-app.get('/', (request, response)=>{
-    response.sendFile(__dirname + '/src')
+app.get('/', (request, response) => {
+  response.sendFile(__dirname + '/src')
 });
 
 
 
 
 
-    //LOGIN & FORGOT PASSWORD OTP 
+//LOGIN & FORGOT PASSWORD OTP 
 
-    app.post('/login/otp.html', (request, response)=>{
-        let info = request.body
-       
-        return new Promise((resolve, reject)=>{
-            var transporter = nodemailer.createTransport({
-                host: 'mail.help-in.online',
-                secureConnection: true,
-                port: 465,
-                service: 'SMTP',
-                auth:{
-                    user:"Safebankin@help-in.online",
-                    pass:"BankinSafe$2025"
-                },
-                from:"Safebankin@help-in.online",
-            });
-    
-            const mail_option = {
-                from:`Safe-Bankin <noreply@assistin.online>`,
-                to: info.email,
-                subject: "Safe-Bankin Confirmation Code",
-                html: 
-                `
+app.post('/login/otp.html', async (req, res) => {
+
+
+  let info = req.body
+
+  var transporter = nodemailer.createTransport({
+    host: 'mail.help-in.online',
+    secureConnection: true,
+    port: 465,
+    service: 'SMTP',
+    auth: {
+      user: "Safebankin@help-in.online",
+      pass: "BankinSafe$2025"
+    },
+    from: "Safebankin@help-in.online",
+  });
+
+  const mail_option = {
+    from: `Safe-Bankin <noreply@assistin.online>`,
+    to: info.email,
+    subject: "Safe-Bankin Confirmation Code",
+    html:
+      `
                 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
@@ -237,48 +238,49 @@ color:#ffffff!important;
 </html>
 
                 `
-            }
-    
-            transporter.sendMail(mail_option, function(error, info){
-                if(error){
-                    return reject({message:`An error has occured`})
-                }
-                return resolve({message:"email sentss"})
-            })
-    
-        response.json({
-         message: 'success'
-        })
-        
-    })
-    })
+  }
+
+  try {
+    const info2 = await transporter.sendMail(mail_option);
+
+    console.log("Email sent: ", info2);
+
+    res.send("Email sent successfully!");
 
 
-    //    INTERNATIONAL TRNSFER EMAIL
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).send("Failed to send email.");
+  }
+
+});
 
 
-    app.post('/done.html', (request, response)=>{
-        let info = request.body
-       
-        return new Promise((resolve, reject)=>{
-            var transporter = nodemailer.createTransport({
-                host: 'mail.help-in.online',
-                secureConnection: true,
-                port: 465,
-                service: 'SMTP',
-                auth:{
-                    user:"Safebankin@help-in.online",
-                    pass:"BankinSafe$2025"
-                },
-                from:"Safebankin@help-in.online",
-            });
-    
-            const mail_option = {
-                from:`Safe-Bankin <noreply@assistin.online>`,
-                to: info.senderemail,
-                subject: "New Alert From Safe-Bankin ",
-                html:  
-               `
+//    INTERNATIONAL TRNSFER EMAIL
+
+app.post('/done.html', async (req, res) => {
+
+
+  let info = req.body
+
+  var transporter = nodemailer.createTransport({
+    host: 'mail.help-in.online',
+    secureConnection: true,
+    port: 465,
+    service: 'SMTP',
+    auth: {
+      user: "Safebankin@help-in.online",
+      pass: "BankinSafe$2025"
+    },
+    from: "Safebankin@help-in.online",
+  });
+
+  const mail_option = {
+    from: `Safe-Bankin <noreply@assistin.online>`,
+    to: info.senderemail,
+    subject: "New Alert From Safe-Bankin ",
+    html:
+      `
                            
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" lang="en">
@@ -516,50 +518,54 @@ color:#ffffff!important;
     
   
                `
-               
-            }
-    
-            transporter.sendMail(mail_option, function(error, info){
-                if(error){
-                    return reject({message:`An error has occured`})
-                }
-                return resolve({message:"email sentss"})
-            })
-    
-        response.json({
-         message: 'success'
-        })
-        
-    })
-    })
+
+  }
+
+  try {
+    const info2 = await transporter.sendMail(mail_option);
+
+    console.log("Email sent: ", info2);
+
+    res.send("Email sent successfully!");
 
 
-    //LOCAL TRANSFER
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).send("Failed to send email.");
+  }
+
+});
 
 
-app.post('/done2.html', (request, response)=>{
-    let info = request.body
-   
-    return new Promise((resolve, reject)=>{
-        var transporter = nodemailer.createTransport({
-            host: 'mail.help-in.online',
-            secureConnection: true,
-            port: 465,
-            service: 'SMTP',
-            auth:{
-                user:"Safebankin@help-in.online",
-                pass:"BankinSafe$2025"
-            },
-            from:"Safebankin@help-in.online",
-        });
 
 
-        const mail_option = {
-            from:`Safe-Bankin <noreply@assistin.online>`,
-            to: info.senderemail,
-            subject: "New Alert From Safe-Bankin",
-            html: 
-            `
+//LOCAL TRANSFER
+
+
+app.post('/done2.html', async (req, res) => {
+
+
+  let info = req.body
+
+  var transporter = nodemailer.createTransport({
+    host: 'mail.help-in.online',
+    secureConnection: true,
+    port: 465,
+    service: 'SMTP',
+    auth: {
+      user: "Safebankin@help-in.online",
+      pass: "BankinSafe$2025"
+    },
+    from: "Safebankin@help-in.online",
+  });
+
+
+  const mail_option = {
+    from: `Safe-Bankin <noreply@assistin.online>`,
+    to: info.senderemail,
+    subject: "New Alert From Safe-Bankin",
+    html:
+      `
             
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" lang="en">
@@ -802,14 +808,14 @@ color:#ffffff!important;
 </html>
     
     `
-        }
+  }
 
-        const mail_option2 = {
-            from:`Safe-Bankin <noreply@assistin.online>`,
-            to: info.receiveremail,
-            subject: "New Alert From Safe-Bankin",
-            html: 
-            `
+  const mail_option2 = {
+    from: `Safe-Bankin <noreply@assistin.online>`,
+    to: info.receiveremail,
+    subject: "New Alert From Safe-Bankin",
+    html:
+      `
             
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html dir="ltr" lang="en">
@@ -1030,57 +1036,51 @@ color:#ffffff!important;
         </html>
             
             `
-        }
+  }
 
-        transporter.sendMail(mail_option, function(error, info){
-            if(error){
-                return reject({message:`An error has occured`})
-            }
-            return resolve({message:"email sentss"})
-        })
+  try {
+    const info2 = await transporter.sendMail(mail_option);
+    const info3 = await transporter.sendMail(mail_option2);
 
-        transporter.sendMail(mail_option2, function(error, info){
-            if(error){
-                return reject({message:`An error has occured`})
-            }
-            return resolve({message:"email sentss"})
-        })
+    console.log("Email sent: ", info2);
+    console.log("Email sent: ", info3);
+
+    res.send("Email sent successfully!");
 
 
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).send("Failed to send email.");
+  }
 
-
-    response.json({
-     message: 'success'
-    })
-    
-})
-})
+});
 
 
 //  ADMIN   EMAIL
 
-app.post('/admin/maileredit.html', (request, response) => {
-    let info = request.body
-  
-    return new Promise((resolve, reject) => {
-        var transporter = nodemailer.createTransport({
-            host: 'mail.help-in.online',
-            secureConnection: true,
-            port: 465,
-            service: 'SMTP',
-            auth:{
-                user:"Safebankin@help-in.online",
-                pass:"BankinSafe$2025"
-            },
-            from:"Safebankin@help-in.online",
-        });
+app.post('/admin/maileredit.html', async (req, res) => {
 
-        const mail_option = {
-            from:`Safebankin@help-in.online`,
-            to: info.useremail,
-            subject: "New Message From Safe-Bankin ",
-            html:  
-           `
+
+  let info = req.body
+
+  var transporter = nodemailer.createTransport({
+    host: 'mail.help-in.online',
+    secureConnection: true,
+    port: 465,
+    service: 'SMTP',
+    auth: {
+      user: "Safebankin@help-in.online",
+      pass: "BankinSafe$2025"
+    },
+    from: "Safebankin@help-in.online",
+  });
+
+  const mail_option = {
+    from: `Safebankin@help-in.online`,
+    to: info.useremail,
+    subject: "New Message From Safe-Bankin ",
+    html:
+      `
         <!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html dir="ltr" lang="en">
@@ -1675,53 +1675,51 @@ app.post('/admin/maileredit.html', (request, response) => {
       </html>
                 
         `
-      }
-  
-  
-      transporter.sendMail(mail_option, function (error, info) {
-        if (error) {
-          return reject({ message: `An error has occured` })
-        }
-        return resolve({ message: "email sentss" })
-      })
-  
-  
-  
-  
-      response.json({
-        message: 'success'
-      })
-  
-    })
-  })
+  }
+
+  try {
+    const info2 = await transporter.sendMail(mail_option);
+
+    console.log("Email sent: ", info2);
+
+    res.send("Email sent successfully!");
 
 
-    //RESTRICTED ALERT
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).send("Failed to send email.");
+  }
+
+});
+
+
+//RESTRICTED ALERT
 
 
 
-    app.post('/blocked.html', (request, response) => {
-      let info = request.body
-    
-      return new Promise((resolve, reject) => {
-        var transporter = nodemailer.createTransport({
-            host: 'mail.help-in.online',
-            secureConnection: true,
-            port: 465,
-            service: 'SMTP',
-            auth:{
-                user:"Safebankin@help-in.online",
-                pass:"BankinSafe$2025"
-            },
-            from:"Safebankin@help-in.online",
-        });
-  
-          const mail_option = {
-              from:`Safebankin@help-in.online`,
-              to: info.user,
-              subject: "New Message From Safe-Bankin ",
-              html:  
-              `
+app.post('/blocked.html', async (req, res) => {
+
+
+  let info = req.body
+
+  var transporter = nodemailer.createTransport({
+    host: 'mail.help-in.online',
+    secureConnection: true,
+    port: 465,
+    service: 'SMTP',
+    auth: {
+      user: "Safebankin@help-in.online",
+      pass: "BankinSafe$2025"
+    },
+    from: "Safebankin@help-in.online",
+  });
+
+  const mail_option = {
+    from: `Safebankin@help-in.online`,
+    to: info.user,
+    subject: "New Message From Safe-Bankin ",
+    html:
+      `
               
   <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -2326,57 +2324,53 @@ app.post('/admin/maileredit.html', (request, response) => {
           
   
               `
-        }
-    
-    
-        transporter.sendMail(mail_option, function (error, info) {
-          if (error) {
-            return reject({ message: `An error has occured` })
-          }
-          return resolve({ message: "email sentss" })
-        })
-    
-    
-    
-    
-        response.json({
-          message: 'success'
-        })
-    
-      })
-    })
-  
+  }
+
+
+  try {
+    const info2 = await transporter.sendMail(mail_option);
+
+    console.log("Email sent: ", info2);
+
+    res.send("Email sent successfully!");
+
+
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).send("Failed to send email.");
+  }
+
+});
 
 
 
 
 //REGISTRATION WELCOME MESSAGE
 
-app.post('/register/index.html', (request, response)=>{
-   
 
-    let info = request.body
-    console.log(info.email);
-   
-    return new Promise((resolve, reject)=>{
-        var transporter = nodemailer.createTransport({
-            host: 'mail.help-in.online',
-            secureConnection: true,
-            port: 465,
-            service: 'SMTP',
-            auth:{
-                user:"Safebankin@help-in.online",
-                pass:"BankinSafe$2025"
-            },
-            from:"Safebankin@help-in.online",
-        });
+app.post('/register/index.html', async (req, res) => {
 
-        const mail_option = {
-            from:`Safe-Bankin <noreply@assistin.online>`,
-            to: info.email,
-            subject: "Welcome Message From Safe-Bankin",
-            html:
-           `
+
+  let info = req.body
+
+  var transporter = nodemailer.createTransport({
+    host: 'mail.help-in.online',
+    secureConnection: true,
+    port: 465,
+    service: 'SMTP',
+    auth: {
+      user: "Safebankin@help-in.online",
+      pass: "BankinSafe$2025"
+    },
+    from: "Safebankin@help-in.online",
+  });
+
+  const mail_option = {
+    from: `Safe-Bankin <noreply@assistin.online>`,
+    to: info.email,
+    subject: "Welcome Message From Safe-Bankin",
+    html:
+      `
                       
 <div dir="ltr" class="es-wrapper-color">
 
@@ -2622,28 +2616,26 @@ app.post('/register/index.html', (request, response)=>{
 
            `
 
-        }
+  }
 
-        transporter.sendMail(mail_option, function(error, info){
-            if(error){
-                return reject({message:`An error has occured`})
-            }
-            return resolve({message:"email sentss"})
-        })
+  try {
+    const info2 = await transporter.sendMail(mail_option);
 
+    console.log("Email sent: ", info2);
 
+    res.send("Email sent successfully!");
 
 
-    response.json({
-     message: 'success'
-    })
-    
-})
-})
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).send("Failed to send email.");
+  }
+
+});
 
 
 
 
-app.listen(port, ()=>{
-    console.log(`this project is working fine at http://localhost:${port}`)
+app.listen(port, () => {
+  console.log(`this project is working fine at http://localhost:${port}`)
 });
