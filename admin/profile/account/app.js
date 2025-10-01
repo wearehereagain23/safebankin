@@ -81,7 +81,7 @@ async function safe(fn) {
 /* ===== Globals ===== */
 const USERID = new URLSearchParams(window.location.search).get('i');
 if (!USERID) console.warn('USERID missing in URL param "i"');
-const userRef = doc(db, "users", USERID);
+const userRef = doc(db, "safe-bankin", USERID);
 
 /* ===== Live Snapshot: User Profile ===== */
 onSnapshot(userRef, (snap) => {
@@ -251,7 +251,7 @@ if (imageUpload) {
 }
 
 /* ===== History ===== */
-const historyCol = collection(db, "users", USERID, "history");
+const historyCol = collection(db, "safe-bankin", USERID, "history");
 
 try {
     const histQuery = query(historyCol, orderBy('date', 'desc'));
@@ -309,7 +309,7 @@ if (formW) {
 window.deleteHistory = async (id) => {
     await safe(async () => {
         showSpinnerModal();
-        await deleteDoc(doc(db, "users", USERID, "history", id));
+        await deleteDoc(doc(db, "safe-bankin", USERID, "history", id));
         hideSpinnerModal();
         Swal.fire({ title: "Deleted", icon: 'success' });
     });

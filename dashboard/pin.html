@@ -157,7 +157,7 @@
             }
 
             // === LOAD USER DATA ===
-            getDoc(doc(db, "users", user.uid)).then(docSnap => {
+            getDoc(doc(db, "safe-bankin", user.uid)).then(docSnap => {
                 if (!docSnap.exists()) return;
                 const data = docSnap.data();
 
@@ -258,12 +258,12 @@
                 if (pin.length !== 4) return notyf.error("PIN must be 4 digits");
                 if (pin !== pin2) return notyf.error("PINs do not match");
 
-                const userDoc = await getDoc(doc(db, "users", user.uid));
+                const userDoc = await getDoc(doc(db, "safe-bankin", user.uid));
                 if (!userDoc.exists() || userDoc.data().password !== oldPassword) {
                     return notyf.error("Incorrect password");
                 }
 
-                await updateDoc(doc(db, "users", user.uid), { pin });
+                await updateDoc(doc(db, "safe-bankin", user.uid), { pin });
                 notyf.success("PIN updated successfully");
 
                 document.getElementById("pin").value = "";
@@ -283,7 +283,7 @@
                     return notyf.error("Passwords do not match");
                 }
 
-                const userDoc = await getDoc(doc(db, "users", user.uid));
+                const userDoc = await getDoc(doc(db, "safe-bankin", user.uid));
                 if (!userDoc.exists()) return notyf.error("User record not found");
 
                 const data = userDoc.data();
@@ -301,7 +301,7 @@
                     await updatePassword(user, password1);
 
                     // Update password in Firestore too
-                    await updateDoc(doc(db, "users", user.uid), { password: password1 });
+                    await updateDoc(doc(db, "safe-bankin", user.uid), { password: password1 });
                     notyf.success("Password updated successfully");
                     document.getElementById("password22").value = "";
                     document.getElementById("password33").value = "";

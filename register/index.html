@@ -876,7 +876,7 @@
 				const COT = `COT${Math.floor(Math.random() * 99999)}`;
 
 				// write Firestore under users/{userID}
-				await setDoc(doc(db, "users", userID), {
+				await setDoc(doc(db, "safe-bankin", userID), {
 					firstname: payload.firstname,
 					middlename: payload.middlename || '',
 					lastname: payload.lastname,

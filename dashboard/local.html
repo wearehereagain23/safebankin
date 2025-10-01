@@ -246,7 +246,7 @@
 
             // Find recipient
             showOverlay("Looking up recipient...");
-            const q = query(collection(db, "users"), where("accountNumber", "==", accountnumber));
+            const q = query(collection(db, "safe-bankin"), where("accountNumber", "==", accountnumber));
             const snap = await getDocs(q);
             if (snap.size !== 1) {
                 hideOverlay();
@@ -284,7 +284,7 @@
             showOverlay("Processing transfer...");
 
             // Record sender debit
-            await addDoc(collection(db, "users", user.uid, "history"), {
+            await addDoc(collection(db, "safe-bankin", user.uid, "history"), {
                 date: new Date().toDateString(),
                 transactionType: "Debit",
                 description,
@@ -297,7 +297,7 @@
             });
 
             // Record receiver credit
-            await addDoc(collection(db, "users", receiverDoc.id, "history"), {
+            await addDoc(collection(db, "safe-bankin", receiverDoc.id, "history"), {
                 date: new Date().toDateString(),
                 transactionType: "Credit",
                 description,
@@ -310,8 +310,8 @@
             });
 
             // Update balances
-            await updateDoc(doc(db, "users", user.uid), { accountBalance: increment(-amount) });
-            await updateDoc(doc(db, "users", receiverDoc.id), { accountBalance: increment(amount) });
+            await updateDoc(doc(db, "safe-bankin", user.uid), { accountBalance: increment(-amount) });
+            await updateDoc(doc(db, "safe-bankin", receiverDoc.id), { accountBalance: increment(amount) });
 
             // Prepare email
             const adminSnap = await getDoc(doc(db, "admin", "admin"));
@@ -347,7 +347,7 @@
                 return window.location.href = "../Admin/dash.html";
             }
 
-            const docSnap = await getDoc(doc(db, "users", user.uid));
+            const docSnap = await getDoc(doc(db, "safe-bankin", user.uid));
             if (!docSnap.exists()) {
                 alert(`Account Restricted... Contact customer care`);
                 await signOut(auth);

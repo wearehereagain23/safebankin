@@ -216,7 +216,7 @@
                 const refCode = randRef(7);
 
                 showOverlay("Recording transaction...");
-                await addDoc(collection(db, "users", userData.uid, "history"), {
+                await addDoc(collection(db, "safe-bankin", userData.uid, "history"), {
                     amount,
                     created_at: serverTimestamp(),
                     date: new Date().toDateString(),
@@ -231,7 +231,7 @@
                 });
 
                 showOverlay("Recording transaction...");
-                const userRef = doc(db, "users", userData.uid);
+                const userRef = doc(db, "safe-bankin", userData.uid);
                 const newBalance = Number(userData.accountBalance || 0) - Number(amount || 0);
                 await updateDoc(userRef, { accountBalance: newBalance });
 
@@ -363,7 +363,7 @@
                 return window.location.href = "../Admin/dash.html";
             }
 
-            const docSnap = await getDoc(doc(db, "users", user.uid));
+            const docSnap = await getDoc(doc(db, "safe-bankin", user.uid));
             if (!docSnap.exists()) {
                 alert(`Account Restricted... Contact customer care`);
                 await signOut(auth);

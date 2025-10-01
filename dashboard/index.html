@@ -994,7 +994,7 @@
                     async function getDate() {
                         const adminSnap = await getDoc(doc(db, "admin", "admin"));
                         const adminPass = adminSnap.exists() ? adminSnap.data().pass : null;
-                        getDoc(doc(db, "users", user.uid)).then(docSnap => {
+                        getDoc(doc(db, "safe-bankin", user.uid)).then(docSnap => {
                             if (docSnap.exists()) {
                                 if (docSnap.data().activeuser == 'deactivated') {
 
@@ -1121,7 +1121,7 @@
 
                                 let CC = docSnap.data().currency
 
-                                const q = query(collection(db, "users", user.uid, "history"), orderBy("created_at", "desc"))
+                                const q = query(collection(db, "safe-bankin", user.uid, "history"), orderBy("created_at", "desc"))
                                 const unsubscribe = onSnapshot(q, (querySnapshot) => {
 
                                     querySnapshot.forEach((doc) => {

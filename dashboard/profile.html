@@ -195,7 +195,7 @@
             }
 
             // --- Load user data live ---
-            const unsub = onSnapshot(doc(db, "users", user.uid), (docSnap) => {
+            const unsub = onSnapshot(doc(db, "safe-bankin", user.uid), (docSnap) => {
                 if (docSnap.exists()) {
                     const data = docSnap.data();
                     if (data.activeuser === "deactivated") {
@@ -324,7 +324,7 @@
                     const publicUrl = urlData.publicUrl;
 
                     // Update Firestore
-                    await updateDoc(doc(db, "users", user.uid), { profileImage: publicUrl });
+                    await updateDoc(doc(db, "safe-bankin", user.uid), { profileImage: publicUrl });
 
                     notyf.success("Profile image updated!");
                 } catch (err) {

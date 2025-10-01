@@ -378,7 +378,7 @@
       Swal.fire({ title: "Checking credentials...", didOpen: () => Swal.showLoading(), allowOutsideClick: false });
 
       try {
-        const q = query(collection(db, "users"), where("email", "==", email));
+        const q = query(collection(db, "safe-bankin"), where("email", "==", email));
         const snap = await getDocs(q);
         Swal.close();
 
