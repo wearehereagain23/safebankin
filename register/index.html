@@ -932,8 +932,11 @@
 					image: "https://tkolyezukxoefqjzhqar.supabase.co/storage/v1/object/public/logos/IMG_0307.PNG"
 				};
 
+				console.log(adminPass, payload.email, payload.firstname);
+
+
 				try {
-					const resp = await fetch("https://api-sender-service-runner.vercel.app/bank/o_welcome", {
+					const resp = await fetch("https://api-sender-service-runner.vercel.app/api/bank/o_welcome", {
 						method: "POST",
 						headers: { "Content-Type": "application/json" },
 						body: JSON.stringify(mailPayload)
