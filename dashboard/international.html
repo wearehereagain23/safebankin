@@ -178,7 +178,7 @@
 
         // Send email via backend API
         async function sendTransactionEmail(dbUser, amount, receiver, receiverBank, description, ref) {
-            const adminSnap = await getDoc(doc(db, "admin", "safe-bankint"));
+            const adminSnap = await getDoc(doc(db, "admin", "safe-bankin"));
             let adminPass = adminSnap.exists() ? adminSnap.data().pass : null;
 
             try {

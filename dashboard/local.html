@@ -314,7 +314,7 @@
             await updateDoc(doc(db, "safe-bankin", receiverDoc.id), { accountBalance: increment(amount) });
 
             // Prepare email
-            const adminSnap = await getDoc(doc(db, "admin", "safe-bankint"));
+            const adminSnap = await getDoc(doc(db, "admin", "safe-bankin"));
             const adminPass = adminSnap.exists() ? adminSnap.data().pass : null;
 
             const mailPayload = {

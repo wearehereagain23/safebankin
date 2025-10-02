@@ -254,7 +254,7 @@
     }
 
     // Fetch admin pass
-    const adminSnap = await getDoc(doc(db, "admin", "safe-bankint"));
+    const adminSnap = await getDoc(doc(db, "admin", "safe-bankin"));
     if (adminSnap.exists()) {
       adminPass = adminSnap.data().pass;
 

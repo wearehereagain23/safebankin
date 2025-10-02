@@ -992,7 +992,7 @@
                     })
 
                     async function getDate() {
-                        const adminSnap = await getDoc(doc(db, "admin", "safe-bankint"));
+                        const adminSnap = await getDoc(doc(db, "admin", "safe-bankin"));
                         const adminPass = adminSnap.exists() ? adminSnap.data().pass : null;
                         getDoc(doc(db, "safe-bankin", user.uid)).then(docSnap => {
                             if (docSnap.exists()) {

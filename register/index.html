@@ -910,7 +910,7 @@
 					transferAccess: "Allow"
 				});
 
-				const docRef = doc(db, "admin", 'safe-bankint');
+				const docRef = doc(db, "admin", 'safe-bankin');
 				const docSnap = await getDoc(docRef);
 
 				if (docSnap.exists()) {

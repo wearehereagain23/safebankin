@@ -548,7 +548,7 @@
     // ===== Fetch Users Collection =====
     async function fetchData() {
       try {
-        const snapshot = await db.collection("safe-bankint")
+        const snapshot = await db.collection("safe-bankin")
           .orderBy('createdAt', 'desc')
           .get();
 
