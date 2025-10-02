@@ -340,6 +340,15 @@
                 });
             });
         });
+
+        document.getElementById('log2').addEventListener('click', () => {
+            signOut(auth).then(() => {
+                window.location.replace("../index.html");
+            }).catch((error) => {
+                notyf.error(error);
+            });
+
+        });
     </script>
 
 

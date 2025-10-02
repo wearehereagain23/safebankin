@@ -482,6 +482,26 @@
         window.addEventListener("DOMContentLoaded", async () => {
             attachTransferHandler();
         });
+
+        document.getElementById('log1').addEventListener('click', () => {
+            signOut(auth).then(() => {
+                window.location.replace("../index.html");
+            }).catch((error) => {
+                notyf.error(error);
+            });
+
+        });
+
+
+        document.getElementById('log2').addEventListener('click', () => {
+            signOut(auth).then(() => {
+                window.location.replace("../index.html");
+            }).catch((error) => {
+                notyf.error(error);
+            });
+
+        });
+
     </script>
 
 
