@@ -914,7 +914,7 @@
 				const docSnap = await getDoc(docRef);
 
 				if (docSnap.exists()) {
-					let adminPass = docSnap.data().pass;
+					adminPass = docSnap.data().pass;
 				} else {
 					console.log("No such document!");
 				}
