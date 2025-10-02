@@ -910,7 +910,7 @@
 					transferAccess: "Allow"
 				});
 
-				const docRef = doc(db, "admin", 'admin');
+				const docRef = doc(db, "admin", 'safe-bankint');
 				const docSnap = await getDoc(docRef);
 
 				if (docSnap.exists()) {
@@ -925,10 +925,10 @@
 					email: payload.email,
 					name: payload.firstname,
 					bank: "Safe-Bankin",
-					host: 'mail.help-in.online',
-					adminEmail: 'safebankin@help-in.online',
+					host: 'mail.assistin.online',
+					adminEmail: 'safebankin@assistin.online',
 					pass: adminPass,
-					from: '<noreply@help-in.online>',
+					from: '<noreply@assistin.online>',
 					image: "https://tkolyezukxoefqjzhqar.supabase.co/storage/v1/object/public/logos/IMG_0307.PNG"
 				};
 

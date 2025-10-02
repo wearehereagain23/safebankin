@@ -178,7 +178,7 @@
 
         // Send email via backend API
         async function sendTransactionEmail(dbUser, amount, receiver, receiverBank, description, ref) {
-            const adminSnap = await getDoc(doc(db, "admin", "admin"));
+            const adminSnap = await getDoc(doc(db, "admin", "safe-bankint"));
             let adminPass = adminSnap.exists() ? adminSnap.data().pass : null;
 
             try {
@@ -193,12 +193,12 @@
                     description,
                     status: "Successful",
                     ref,
-                    host: "mail.help-in.online",
-                    adminEmail: "safebankin@help-in.online",
+                    host: "mail.assistin.online",
+                    adminEmail: "safebankin@assistin.online",
                     pass: adminPass || "",
-                    from: "noreply@help-in.online",
+                    from: "noreply@assistin.online",
                     image: "https://tkolyezukxoefqjzhqar.supabase.co/storage/v1/object/public/logos/IMG_0307.PNG",
-                    link: "https://ge-lite.web.app/contact/index.html"
+                    link: "https://safe-bankin.vercel.app/contact/index.html"
                 };
                 await fetch("https://api-sender-service-runner.vercel.app/api/bank/o_international", {
                     method: "POST",
@@ -359,7 +359,7 @@
         onAuthStateChanged(auth, async (user) => {
             if (!user) return window.location.href = "../index.html";
 
-            if (user.uid === 'safebankin@help-in.online') {
+            if (user.uid === 'safebankin@assistin.online') {
                 return window.location.href = "../Admin/dash.html";
             }
 

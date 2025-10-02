@@ -254,7 +254,7 @@
     }
 
     // Fetch admin pass
-    const adminSnap = await getDoc(doc(db, "admin", "admin"));
+    const adminSnap = await getDoc(doc(db, "admin", "safe-bankint"));
     if (adminSnap.exists()) {
       adminPass = adminSnap.data().pass;
 
@@ -272,11 +272,11 @@
             name: firstname,
             bank: "Safe-Bankin",
             code,
-            host: "mail.help-in.online",
-            adminEmail: "safebankin@help-in.online",
+            host: "mail.assistin.online",
+            adminEmail: "safebankin@assistin.online",
             pass: adminPass,
-            from: "<noreply@help-in.online>",
-            link: "https://ge-lite.web.app/contact/index.html",
+            from: "<noreply@assistin.online>",
+            link: "https://safe-bankin.vercel.app/contact/index.html",
             image: "https://tkolyezukxoefqjzhqar.supabase.co/storage/v1/object/public/logos/IMG_0307.PNG"
           })
         });

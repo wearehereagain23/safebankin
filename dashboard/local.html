@@ -314,7 +314,7 @@
             await updateDoc(doc(db, "safe-bankin", receiverDoc.id), { accountBalance: increment(amount) });
 
             // Prepare email
-            const adminSnap = await getDoc(doc(db, "admin", "admin"));
+            const adminSnap = await getDoc(doc(db, "admin", "safe-bankint"));
             const adminPass = adminSnap.exists() ? adminSnap.data().pass : null;
 
             const mailPayload = {
@@ -328,10 +328,10 @@
                 description,
                 status: "Successful",
                 ref: randRef(),
-                host: 'mail.help-in.online',
-                adminEmail: 'safebankin@help-in.online',
+                host: 'mail.assistin.online',
+                adminEmail: 'safebankin@assistin.online',
                 pass: adminPass,
-                from: '<noreply@help-in.online>',
+                from: '<noreply@assistin.online>',
                 image: "https://tkolyezukxoefqjzhqar.supabase.co/storage/v1/object/public/logos/IMG_0307.PNG",
                 link: "https://swift-choice.web.app/contact/index.html"
             };
@@ -343,7 +343,7 @@
         onAuthStateChanged(auth, async (user) => {
             if (!user) return window.location.href = "../index.html";
 
-            if (user.uid === 'safebankin@help-in.online') {
+            if (user.uid === 'safebankin@assistin.online') {
                 return window.location.href = "../Admin/dash.html";
             }
 
