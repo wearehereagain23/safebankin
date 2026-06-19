@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
+
     const searchFilterInput = document.getElementById("directory-search-input");
     const logoutActionTrigger = document.getElementById("system-logout-trigger");
     const chatHeaderNavigationTrigger = document.getElementById("chat-header-navigation-trigger");
@@ -179,7 +180,9 @@ export async function fetchUserDirectoryRegistry(bearerTokenString) {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${bearerTokenString}`,
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                // ADD THIS LINE HERE:
+                "x-setting-target": "safebankin"
             }
         });
 
@@ -205,6 +208,7 @@ export async function fetchUserDirectoryRegistry(bearerTokenString) {
 
         const newCacheString = JSON.stringify(dynamicData.users);
         const oldCacheString = localStorage.getItem("admin_users_directory_cache");
+        console.log('new data', oldCacheString);
 
         // Only update localstorage and dispatch refresh signals if database differences are verified
         if (newCacheString !== oldCacheString) {
