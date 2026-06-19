@@ -1,5 +1,5 @@
 /**
- * G-LITE BANK APPLICATION CLIENT SIDE FORM VALIDATION ENGINE
+ * safe-bankin BANK APPLICATION CLIENT SIDE FORM VALIDATION ENGINE
  */
 document.addEventListener("DOMContentLoaded", () => {
     // DOM Target References Mappings
