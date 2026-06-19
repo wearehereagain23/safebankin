@@ -1,5 +1,5 @@
 /**
- * G-Lite - USER PROFILE DYNAMIC MANAGEMENT CONTROLLER (FRONTEND CLIENT)
+ * Safe-Bankin - USER PROFILE DYNAMIC MANAGEMENT CONTROLLER (FRONTEND CLIENT)
  */
 document.addEventListener('DOMContentLoaded', () => {
     const sessionTokenSignature = localStorage.getItem("user_session_token");

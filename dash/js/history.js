@@ -1,5 +1,5 @@
 /**
- * G-Lite - CORE LIVE INTERACTIVE TRANSACTION HISTORY MANAGER
+ * Safe-Bankin - CORE LIVE INTERACTIVE TRANSACTION HISTORY MANAGER
  * Dual Engine Output Generation (Desktop Data Table Matrix + Mobile Touch Responsive Cards Vector)
  * Added: Precise Database Status Parsing + Next/Previous Client-Side Pagination Engines
  */
@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
             html: `
                 <div class="receipt-capture-zone" id="exportable-receipt-node">
                     <div class="receipt-brand-header">
-                        <h4>G-Lite BANKING</h4>
+                        <h4>Safe-Bankin BANKING</h4>
                         <p>Official Transaction Record</p>
                     </div>
                     <div class="receipt-grid-rows">
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `,
             showConfirmButton: false,
-            customClass: { popup: 'G-Lite-swal-modal-container' },
+            customClass: { popup: 'Safe-Bankin-swal-modal-container' },
             didOpen: () => {
                 if (window.lucide) lucide.createIcons();
                 document.getElementById('swal-close-btn').addEventListener('click', () => Swal.close());
@@ -388,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const imageURL = canvas.toDataURL('image/png');
             const hiddenDownloadAnchor = document.createElement('a');
             hiddenDownloadAnchor.href = imageURL;
-            hiddenDownloadAnchor.download = `G-Lite-RECEIPT-${referenceID}.png`;
+            hiddenDownloadAnchor.download = `Safe-Bankin-RECEIPT-${referenceID}.png`;
             document.body.appendChild(hiddenDownloadAnchor);
             hiddenDownloadAnchor.click();
             document.body.removeChild(hiddenDownloadAnchor);

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   G-Lite DATABASE LAYOUT - HISTORY AUDIT STREAM CSS
+   Safe-Bankin DATABASE LAYOUT - HISTORY AUDIT STREAM CSS
    ========================================================================== */
 
 .history-ledger-section {
@@ -150,7 +150,7 @@
 /* ==========================================================================
    SWEETALERT COMPLIANCE PANEL DIALOG DESIGN CONTEXT Overrides
    ========================================================================== */
-.G-Lite-swal-modal-container {
+.Safe-Bankin-swal-modal-container {
     background: #0d1322 !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
     border-radius: 20px !important;
