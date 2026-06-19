@@ -2,469 +2,199 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <style>
-    input,
-    textarea,
-    select {
-      font-size: 16px;
-      /* prevent iOS zoom on focus */
-    }
-
-    html,
-    body {
-      touch-action: manipulation;
-      /* prevent double-tap zoom */
-    }
-  </style>
-
-  <title>Safe-Bankin — Login</title>
-  <link rel="icon" type="image/png" href="../dashboard/favicon.ico">
-  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: Inter, Arial, sans-serif;
-      margin: 0;
-      background: #f9fafb;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .login-card {
-      width: 100%;
-      max-width: 420px;
-      background: #fff;
-      padding: 40px;
-      border-radius: 14px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-      text-align: center;
-    }
-
-    .logo {
-      background: #fff;
-      border-radius: 10px;
-      padding: 12px;
-      display: inline-block;
-      margin-bottom: 16px;
-    }
-
-    .logo img {
-      width: 160px;
-      height: auto;
-    }
-
-    h2 {
-      margin: 8px 0 6px;
-      font-size: 22px;
-      color: #0f172a;
-    }
-
-    .subtitle {
-      font-size: 14px;
-      color: #475569;
-      margin-bottom: 24px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      text-align: left;
-    }
-
-    label {
-      font-size: 13px;
-      font-weight: 600;
-      color: #1e293b;
-      margin-bottom: 6px;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 14px;
-      outline: none;
-      transition: 0.2s;
-    }
-
-    input:focus {
-      border-color: #0ea365;
-      box-shadow: 0 0 0 3px rgba(14, 163, 101, 0.15);
-    }
-
-    .btn {
-      margin-top: 10px;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      font-size: 15px;
-      font-weight: 600;
-      background: linear-gradient(90deg, #0ea365, #059669);
-      color: #fff;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background: linear-gradient(90deg, #059669, #0ea365);
-    }
-
-    .footer-text {
-      margin-top: 18px;
-      font-size: 13px;
-      color: #475569;
-    }
-
-    .footer-text a {
-      color: #0ea365;
-      text-decoration: none;
-    }
-  </style>
-
-  <script>
-    (function () {
-      // Remove duplicate viewport meta tags (sometimes frameworks inject another meta)
-      const metas = document.querySelectorAll('meta[name="viewport"]');
-      if (metas.length > 1) {
-        for (let i = 1; i < metas.length; i++) metas[i].remove();
-      }
-
-      // Ensure inputs keep font-size (works with SPA frameworks that re-render)
-      function enforceInputStyles() {
-        document.querySelectorAll('input, textarea, select, button').forEach(el => {
-          el.style.fontSize = '16px';
-          el.style.lineHeight = '1.2';
-          // vendor property fallback:
-          try { el.style.webkitTextSizeAdjust = '100%'; } catch (e) { }
-        });
-      }
-      enforceInputStyles();
-
-      // NON-PASSIVE touchstart to allow preventDefault() (important!)
-      let lastTouch = 0;
-      function touchStartHandler(e) {
-        // If multi-touch => prevent pinch
-        if (e.touches && e.touches.length > 1) {
-          e.preventDefault();
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        input,
+        textarea,
+        select {
+            font-size: 16px;
+            /* prevent iOS zoom on focus */
         }
-        // Block quick double-tap => prevents double-tap zoom
-        const now = Date.now();
-        if (now - lastTouch <= 300) {
-          e.preventDefault();
+
+        html,
+        body {
+            touch-action: manipulation;
+            /* prevent double-tap zoom */
         }
-        lastTouch = now;
-      }
-      document.addEventListener('touchstart', touchStartHandler, { passive: false });
+    </style>
 
-      // Some Safari versions support gesturestart for pinch
-      function gestureStart(e) { e.preventDefault(); }
-      document.addEventListener('gesturestart', gestureStart, { passive: false });
-
-      // Block pinch during touchmove (extra protection)
-      function touchMoveHandler(e) {
-        if (e.touches && e.touches.length > 1) e.preventDefault();
-      }
-      document.addEventListener('touchmove', touchMoveHandler, { passive: false });
-
-      // Try to block Ctrl/Cmd + wheel (desktop zoom)
-      function wheelHandler(e) {
-        if (e.ctrlKey || e.metaKey) {
-          e.preventDefault();
+    <title>Safe-Bankin — Login</title>
+    <link rel="icon" type="image/png" href="../dashboard/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <style>
+        body {
+            font-family: Inter, Arial, sans-serif;
+            margin: 0;
+            background: #f9fafb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-      }
-      document.addEventListener('wheel', wheelHandler, { passive: false });
 
-      // Block Ctrl/Cmd + +/- or 0 key zoom shortcuts
-      function keydownHandler(e) {
-        if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=' || e.key === '0')) {
-          e.preventDefault();
-          e.stopImmediatePropagation();
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+            text-align: center;
         }
-      }
-      document.addEventListener('keydown', keydownHandler, true);
 
-      // Re-apply when DOM changes (e.g. frameworks)
-      const mo = new MutationObserver(enforceInputStyles);
-      mo.observe(document.documentElement, { subtree: true, childList: true });
+        .logo {
+            background: #fff;
+            border-radius: 10px;
+            padding: 12px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
 
-      // Cleanup if needed
-      window.addEventListener('beforeunload', function () {
-        document.removeEventListener('touchstart', touchStartHandler);
-        document.removeEventListener('gesturestart', gestureStart);
-        document.removeEventListener('touchmove', touchMoveHandler);
-        document.removeEventListener('wheel', wheelHandler);
-        document.removeEventListener('keydown', keydownHandler, true);
-        mo.disconnect();
-      });
-    })();
-  </script>
+        .logo img {
+            width: 160px;
+            height: auto;
+        }
+
+        h2 {
+            margin: 8px 0 6px;
+            font-size: 22px;
+            color: #0f172a;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #475569;
+            margin-bottom: 24px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: left;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: #21eaed;
+            box-shadow: 0 0 0 3px rgba(14, 163, 101, 0.15);
+        }
+
+        .btn {
+            margin-top: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-size: 15px;
+            font-weight: 600;
+            background: linear-gradient(90deg, #21eaed, #041036);
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(90deg, #041036, #21eaed);
+        }
+
+        .footer-text {
+            margin-top: 18px;
+            font-size: 13px;
+            color: #475569;
+        }
+
+        .footer-text a {
+            color: #21eaed;
+            text-decoration: none;
+        }
+    </style>
+
+
 </head>
 
 <body>
-  <div class="login-card">
-    <div class="logo">
-      <img src="../logo.PNG" alt="Safe-Bankin Logo">
+    <div class="login-card">
+        <div class="logo">
+            <img src="../logo.PNG" alt="Safe-Bankin Logo">
+        </div>
+        <div id="google_translate_element"> </div>
+        <h2>Welcome back!</h2>
+        <p class="subtitle">Please log in to access your account securely.</p>
+
+        <form id="loginForm">
+            <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Your password" required />
+            </div>
+            <a id="forgotPasswordLink" style="color: #041036; cursor: pointer;" href="#"><small>Forgot
+                    password</small></a>
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <p class="footer-text">
+            Don’t have an account? <a href="../register/index.html">Sign up</a>
+        </p>
     </div>
-    <h2>Welcome back!</h2>
-    <p class="subtitle">Please log in to access your account securely.</p>
 
-    <form id="loginForm">
-      <div>
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="you@example.com" required />
-      </div>
-
-      <div>
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" placeholder="Your password" required />
-      </div>
-      <a style="color: #059669;" href="forgottenpassword.html"><small>Forgot password</small></a>
-      <button type="submit" class="btn">Login</button>
-    </form>
-
-    <p class="footer-text">
-      Don’t have an account? <a href="../register/index.html">Sign up</a>
-    </p>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="../config.js"></script>
-
-  <script type="module">
-    // Security Config
-    const MAX_ATTEMPTS = 5;
-    const LOCKOUT_DURATION = 30 * 60 * 1000; // 30 minutes
-
-    const initSupabase = () => {
-      if (typeof supabase !== 'undefined' && !window.supabaseDb) {
-        window.supabaseDb = supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_KEY);
-      }
-    };
-    initSupabase();
-
-    const loginForm = document.getElementById("loginForm");
-
-    loginForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const email = document.getElementById("email").value.trim().toLowerCase();
-      const password = document.getElementById("password").value.trim();
-
-      if (!email || !password) {
-        return Swal.fire({ icon: "warning", title: "Required", text: "Please enter email and password." });
-      }
-
-      // --- 1. Check Password Lockout ---
-      if (isLockedOut(email, 'pass')) return;
-
-      Swal.fire({ title: "Authenticating...", didOpen: () => Swal.showLoading(), allowOutsideClick: false });
-
-      try {
-        const { data: user, error } = await window.supabaseDb
-          .from('safe-bankin_users')
-          .select('*')
-          .eq('email', email)
-          .single();
-
-        if (error || !user) {
-          Swal.close();
-          return Swal.fire({ icon: "error", title: "Access Denied", text: "Invalid email address." });
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
         }
 
-        // --- 2. Verify Password ---
-        if (user.password !== password) {
-          Swal.close();
-          handleFailure(email, 'pass');
-          return;
+    </script>
+
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </div>
+
+
+
+    <style>
+        #google_translate_element {
+            color: transparent;
         }
 
-        // Success: Reset password attempts and move to PIN
-        resetAttempts(email, 'pass');
-        showPinModal(user);
-
-      } catch (err) {
-        console.error(err);
-        Swal.fire({ icon: "error", title: "System Error", text: "Connection failed." });
-      }
-    });
-
-    async function showPinModal(userData) {
-      const email = userData.email;
-
-      if (isLockedOut(email, 'pin')) return;
-
-      const { value: enteredPin } = await Swal.fire({
-        title: 'SECURITY VERIFICATION',
-        html: `
-                <div class="security-lock-icon" style="font-size: 3rem; color: #00313d; margin-bottom: 15px;">🔐</div>
-                <p style="font-weight: 600; color: #555;">Identity Confirmed: ${userData.firstname}</p>
-                <p style="font-size: 0.85rem; color: #888; margin-bottom: 20px;">Enter your 4-digit Transaction PIN to unlock your vault.</p>
-                <input type="password" id="swal-input-pin" class="swal2-input" 
-                       placeholder="****" maxlength="4" autofocus
-                       autocomplete="new-password" 
-                       style="text-align: center; letter-spacing: 15px; font-size: 2rem; width: 80%; margin: 0 auto; border-radius: 8px;">
-            `,
-        background: '#ffffff',
-        confirmButtonText: 'UNLOCK ACCESS',
-        confirmButtonColor: '#00313d',
-        focusConfirm: false,
-        allowOutsideClick: false,
-        preConfirm: () => {
-          const pin = document.getElementById('swal-input-pin').value;
-          if (!/^\d{4}$/.test(pin)) {
-            Swal.showValidationMessage('Please enter a valid 4-digit PIN');
-          }
-          return pin;
-        }
-      });
-
-      if (enteredPin) {
-        if (enteredPin == userData.pin) {
-          // 1. Clear Security Lockouts/Attempts on Success
-          resetAttempts(email, 'pin');
-          resetAttempts(email, 'pass');
-
-          Swal.fire({
-            icon: 'success',
-            title: 'ACCESS GRANTED',
-            text: 'Synchronizing secure session...',
-            timer: 1500,
-            showConfirmButton: false,
-            didOpen: () => Swal.showLoading()
-          });
-
-          // 2. Set Local Session (Double check these keys match your other pages)
-          const sessionData = {
-            uuid: userData.uuid,
-            email: userData.email,
-            fullName: `${userData.firstname} ${userData.lastname}`
-          };
-
-          localStorage.setItem('user_session', JSON.stringify(sessionData));
-
-          // 3. Navigation with small delay to ensure Storage is written
-          setTimeout(() => {
-            // If dashboard is in a folder named dashboard next to index.html:
-            window.location.replace("../dashboard/index.html");
-          }, 1600);
-
-        } else {
-          handleFailure(email, 'pin', userData);
-        }
-      }
-    }
-    // --- SECURITY UTILITY FUNCTIONS ---
-
-    function handleFailure(email, type, userData = null) {
-      const attemptKey = `attempts_${type}_${email}`;
-      const lockoutKey = `lockout_${type}_${email}`;
-
-      let attempts = parseInt(localStorage.getItem(attemptKey) || 0) + 1;
-      localStorage.setItem(attemptKey, attempts);
-
-      if (attempts >= MAX_ATTEMPTS) {
-        const expiry = Date.now() + LOCKOUT_DURATION;
-        localStorage.setItem(lockoutKey, expiry);
-        localStorage.removeItem(attemptKey);
-        Swal.fire('Security Lockout', `Too many failed ${type === 'pin' ? 'PIN' : 'password'} attempts. Access suspended for 30 minutes.`, 'error');
-      } else {
-        const remaining = MAX_ATTEMPTS - attempts;
-        Swal.fire('Access Denied', `Invalid ${type === 'pin' ? 'PIN' : 'password'}. ${remaining} attempts remaining before 30-min lockout.`, 'warning').then(() => {
-          // If it was a PIN failure and not locked yet, reopen the modal
-          if (type === 'pin' && userData) showPinModal(userData);
-        });
-      }
-    }
-
-    function isLockedOut(email, type) {
-      const lockoutKey = `lockout_${type}_${email}`;
-      const lockoutTime = localStorage.getItem(lockoutKey);
-
-      if (lockoutTime && Date.now() < lockoutTime) {
-        const remainingMs = lockoutTime - Date.now();
-        const minutes = Math.ceil(remainingMs / 1000 / 60);
-        Swal.fire('Locked', `This account is temporarily suspended. Try again in ${minutes} minutes.`, 'error');
-        return true;
-      }
-      return false;
-    }
-
-    function resetAttempts(email, type) {
-      localStorage.removeItem(`attempts_${type}_${email}`);
-      localStorage.removeItem(`lockout_${type}_${email}`);
-    }
-  </script>
-
-
-  <script>
-    (async function () {
-      const loadConfig = () => {
-        return new Promise((resolve) => {
-          const paths = ['./config.js', '../config.js', '../../config.js', '../../../config.js'];
-          let found = false;
-          paths.forEach(path => {
-            const script = document.createElement('script');
-            script.src = path;
-            script.onload = () => { if (typeof CONFIG !== 'undefined' && !found) { found = true; resolve(CONFIG); } };
-            document.head.appendChild(script);
-          });
-          setTimeout(() => { if (!found && typeof CONFIG !== 'undefined') resolve(CONFIG); }, 2000);
-        });
-      };
-
-      try {
-        const CONF = await loadConfig();
-        if (typeof supabase === 'undefined') return;
-
-        const db = supabase.createClient(CONF.SUPABASE_URL, CONF.SUPABASE_KEY);
-        const REDIRECT_URL = window.location.origin + "/404.html";
-
-        // --- REDIRECT LOGIC ---
-        const checkVisibility = (isVisible) => {
-          if (isVisible === false && !window.location.pathname.includes('404.html')) {
-            console.log("🚫 Site visibility disabled. Redirecting...");
-            window.location.href = REDIRECT_URL;
-          }
-        };
-
-        // 1. Initial Fetch
-        const { data, error } = await db
-          .from('safe-bankin_admin')
-          .select('website_visibility')
-          .eq('id', 1)
-          .single();
-
-        if (!error && data) {
-          checkVisibility(data.website_visibility);
+        #google_translate_element a {
+            display: none;
         }
 
-        // 2. REALTIME VISIBILITY MONITOR
-        db.channel('visibility-kill-switch')
-          .on('postgres_changes', {
-            event: 'UPDATE',
-            schema: 'public',
-            table: 'safe-bankin_admin',
-            filter: 'id=eq.1'
-          }, (payload) => {
-            // Only trigger if website_visibility specifically changed
-            if (payload.new && payload.new.hasOwnProperty('website_visibility')) {
-              checkVisibility(payload.new.website_visibility);
-            }
-          })
-          .subscribe();
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
 
-      } catch (err) {
-        console.error("Visibility System Error:", err);
-      }
-    })();
-  </script>
+        body>.skiptranslate {
+            display: none;
+        }
+    </style>
 
+
+    <script src="index.js"></script>
 </body>
 
 </html>
